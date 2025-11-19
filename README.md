@@ -1,89 +1,53 @@
-[practical 1.cpp](https://github.com/user-attachments/files/23619483/practical.1.cpp)
-#include<stdio.h>
+Array Operations in C
+Introduction
+This project provides a simple C program for performing basic operations on arrays. It helps users create, modify, sort, and manage arrays directly from the command-line interface.​
 
-int main()
-{
-	int n,i,j,a[10];
-	printf("enter the number of array you want:");
-	scanf("%d",&n);
-	
-	for(int i=0;i<n;i++)
-	{
-		printf("\na[%d] = ",i);
-		scanf("%d",&a[i]);
-	}
-	printf("\nyour array is:");
-	for(int i=0;i<n;i++)
-	{
-		printf("\na[%d]=%d",i,a[i]);
-	}
-	printf("\n inerting elments in the array:");
-	int num,pos;
-	
-	printf("\nenter the elemnts you want to enter in the array:");
-	scanf("%d",&num);
-	printf("\nenter the elment's positions:");
-	scanf("%d",&pos);
-    
-	for(i=n-1;i>=pos;i--)
-		a[i+1]=a[i];
-		a[pos]=num;
-	n=n+1;
-	printf("\nyour array is:");
-	for(int i=0;i<n;i++)
-	{
-		printf("\na[%d]=%d",i,a[i]);
-	}
-	
-	//sorting the number:
-	for(i=0;i<n-i;i++)
-	{
-		for(j=0;j<n-i-1;j++)
-		{
-			if (a[j] > a[j + 1])
-			{
-			int temp=a[j];
-			a[j]=a[j+1];
-		    a[j+1]=temp;
-		    }
-		}
-	}
-	printf("\nyour array is:");
-	for(int i=0;i<n;i++)
-	{
-		printf("\na[%d]=%d",i,a[i]);
-	}
-    //cheak the duplicate number
-	int flag=1;
-	for(i=0;i<n;i++)
-	{
-	    for(j=i+1;j<n;j++)
-		{
-			if(a[i]==a[j] && i!=j)
-		    {
-			   printf("\n the duplicate number is %d & %d found at %d & %d",a[i],a[j],i,j);
-			   //delete the duplicate number:
-			   for(int k=j;k<=j;k++)
-			   a[k]=a[k+1];
-			   flag=0;
-			   break;
-			}
-		}	
-    n--;
-	}
-	
-	if(flag==1)
-	{
-	   printf("\n no duplicate number found:");	
-    }	
-    else
-	{
-	printf("\nyour array is:");
-	for(int i=0;i<n;i++)
-	{
-		printf("\na[%d]=%d",i,a[i]);
-	}
-    }
-	
-	return 0;
-}
+Features
+Create an array and display its elements.​
+
+Insert new elements at a specific position.​
+
+Sort the array in ascending order.​
+
+Detect and delete duplicate elements from the array.​
+
+Usage Instructions
+Compile the code using any C compiler.
+
+text
+gcc practical-1.cpp -o array_ops
+Run the executable:
+
+text
+./array_ops
+Follow the prompts to:
+
+Enter the number of array elements
+
+Add new elements to the array
+
+Sort the array and view the result
+
+Check and remove duplicate elements
+
+Example
+text
+Enter the number of array you want: 5
+Enter elements: 1 2 3 2 4
+Your array is: 1 2 3 2 4
+Sorting the array...
+Sorted array: 1 2 2 3 4
+Checking for duplicates...
+The duplicate number is: 2 found at index 1 and 2
+Deleting duplicates...
+Final array: 1 2 3 4
+File Structure
+practical-1.cpp : Main source code for array operations
+
+README.md: Project explanation and usage details
+
+Credits
+Author: [Your Name Here]
+Feel free to modify or use this program for learning array manipulation in C.​
+
+You can copy and paste this README into your GitHub repository's README.md file and edit the "Author" section with your actual name. This will help others understand and use your code easily.
